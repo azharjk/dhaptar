@@ -5,17 +5,31 @@ class DhaptarNode {
   }
 }
 
+/**
+ * Intantiate like this
+ * `new Dhaptar()`
+ */
 class Dhaptar {
   constructor() {
     this.head = null;
     this._size = 0;
   }
 
+  /**
+   * Set the tail of linked list
+   *
+   * @param {any} node
+   */
   set tail(node) {
     this.pop();
     this.push(node);
   }
 
+  /**
+   * Get the tail of linked list
+   *
+   * @returns tail
+   */
   get tail() {
     if (this.head == null) {
       return this.head;
@@ -28,6 +42,11 @@ class Dhaptar {
     return p;
   }
 
+  /**
+   * Get the size or length of linked list
+   *
+   * @returns size
+   */
   get size() {
     if (this.head == null) {
       return 0;
@@ -41,11 +60,22 @@ class Dhaptar {
     return this._size;
   }
 
+  // This is necessary?
+  /**
+   * Clear the entire linked list
+   *
+   * @returns
+   */
   clear() {
     this.head = null;
     this._size = 0;
   }
 
+  /**
+   * Removed the tail of linked list
+   *
+   * @returns
+   */
   pop() {
     if (this.head != null) {
       if (this.head.next == null) {
@@ -61,6 +91,11 @@ class Dhaptar {
     }
   }
 
+  /**
+   * Insert data to the linked list
+   *
+   * @param {any} data
+   */
   push(data) {
     const temp =
       data instanceof DhaptarNode
@@ -78,6 +113,12 @@ class Dhaptar {
     }
   }
 
+  /**
+   * Get a specified data
+   *
+   * @param {any} index
+   * @returns
+   */
   at(index) {
     if (this.head == null) {
       throw new Error('Dhaptar head is empty');
